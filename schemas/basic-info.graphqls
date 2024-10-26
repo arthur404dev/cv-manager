@@ -1,0 +1,27 @@
+type BasicInfo {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  additionalName: String!
+  pronouns: String
+  headline: String
+}
+
+extend type Query {
+  basicInfo(id: ID!): BasicInfo!
+  basicInfos: [BasicInfo!]!
+}
+
+extend type Mutation {
+  createBasicInfo(basicInfo: BasicInfoInput!): BasicInfo!
+  updateBasicInfo(id: ID!, basicInfo: BasicInfoInput): BasicInfo!
+  deleteBasicInfo(id: ID!): Boolean!
+}
+
+input BasicInfoInput {
+  firstName: String!
+  lastName: String!
+  additionalName: String
+  pronouns: String
+  headline: String
+}
