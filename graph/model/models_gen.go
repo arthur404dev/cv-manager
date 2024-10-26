@@ -10,6 +10,13 @@ type NewTodo struct {
 	UserID string `json:"userId"`
 }
 
+type Person struct {
+	ID     string `json:"id"`
+	Name   string `json:"name"`
+	Age    int    `json:"age"`
+	IsMale bool   `json:"isMale"`
+}
+
 type Query struct {
 }
 
